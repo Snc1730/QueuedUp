@@ -1,0 +1,12 @@
+{
+  "-MiBsfuTafbEQ7eAULxV" : {
+    "genre_type" : "Action",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "actionDescription"
+  },
+  "-MiBt86VzkC-EGmJnxjm" : {
+    "genre_type" : "Adventure",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  }
+}

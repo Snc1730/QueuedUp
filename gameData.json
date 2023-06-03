@@ -1,0 +1,16 @@
+{
+  "-MiBsfuTafbEQ7eGame1" : {
+    "title" : "Game 1",
+    "firebaseKey" : "-MiBsfuTafbEQ7eGame1",
+    "description" : "Game 1 Description",
+    "image" : "https://image.api.playstation.com/vulcan/ap/rnd/202212/0522/Dzry5RAwU9HsJGXZ3PUSYgCa.jpg",
+    "genre_id" : "-MiBsfuTafbEQ7eAULxV"
+  },
+  "-MiBt86VzkC-EGmGame2" : {
+    "title" : "Game 2",
+    "firebaseKey" : "-MiBt86VzkC-EGmGame2",
+    "description" : "Game 2 Description",
+    "image" : "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1dfrcGrjQcqWUFq2EWxJX2/faa33a06bd56c4e4f496f2b574ce11a1/CBHeader.jpg",
+    "genre_id" : "-MiBsfuTafbEQ7eAULxV"
+  }
+}
