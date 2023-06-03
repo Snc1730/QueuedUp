@@ -1,6 +1,6 @@
-import client from '../utils/client';
+import { clientCredentials } from '../utils/client';
 
-const endpoint = client.databaseURL;
+const endpoint = clientCredentials.databaseURL;
 
 const getAllGenres = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/genre.json`, {
@@ -14,4 +14,19 @@ const getAllGenres = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getAllGenres;
+const getSingleGenre = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/genre/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }, // you technically do not need the options object for GET requests, but using it here for consistency
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data)) // will resolve a single object
+    .catch(reject);
+});
+
+export {
+  getAllGenres,
+  getSingleGenre,
+};
