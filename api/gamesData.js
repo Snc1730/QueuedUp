@@ -20,6 +20,24 @@ const getAllGames = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getUserGames = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/games.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 const deleteSingleGame = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/games/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -85,4 +103,5 @@ export {
   getSingleGame,
   createGame,
   updateGame,
+  getUserGames,
 };
