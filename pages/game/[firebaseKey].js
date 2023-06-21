@@ -2,18 +2,21 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import viewGameDetails from '../../api/mergedData';
+import ReviewForm from '../../components/forms/ReviewForm';
+import { getReviewsByGameId } from '../../api/gamesData';
 
 export default function ViewGame() {
-  const [gameDetails, setGameDetails] = useState({});
   const router = useRouter();
-
-  // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
+  const [gameDetails, setGameDetails] = useState({});
 
   // TODO: make call to API layer to get the data
   useEffect(() => {
     viewGameDetails(firebaseKey).then(setGameDetails);
+    getReviewsByGameId(firebaseKey).then();
   }, [firebaseKey]);
+
+  const getGameReviews = () => { getReviewsByGameId(firebaseKey).then(); };
 
   return (
     <div className="mt-5 d-flex flex-wrap">
@@ -28,6 +31,12 @@ export default function ViewGame() {
         <hr />
         <p>{gameDetails.price || ''}</p>
         <p>{gameDetails.numOfPlayers || ''}</p>
+      </div>
+      <span>Reviews</span>
+      <div className="review-container">
+        <div>
+          <ReviewForm gameId={firebaseKey} onUpdate={getGameReviews} />
+        </div>
       </div>
     </div>
   );
