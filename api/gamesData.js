@@ -2,6 +2,19 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
+const createQueuedGame = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/queuedGames.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 const getAllGames = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/games.json`, {
     method: 'GET',
@@ -97,6 +110,24 @@ const updateGame = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getUsersQueuedGames = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/queuedGames.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getAllGames,
   deleteSingleGame,
@@ -104,4 +135,6 @@ export {
   createGame,
   updateGame,
   getUserGames,
+  getUsersQueuedGames,
+  createQueuedGame,
 };
