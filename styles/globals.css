@@ -15,8 +15,21 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background-color: #88effd;
+}
+.review-avatar{
+  border-radius: 100px;
+  height: 30px;
+  margin-right: 10px;
+}
+.review-container{
+  margin-top: 10px;
+}
+.list-reviews{
+  margin-top: 40px;
 }
