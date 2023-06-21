@@ -23,6 +23,9 @@ export default function NavBarAuth() {
             <Link passHref href="/game/new">
               <Nav.Link>Add Game</Nav.Link>
             </Link>
+            <Link passHref href="/queuedGamePage">
+              <Nav.Link>Queued Games</Nav.Link>
+            </Link>
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
