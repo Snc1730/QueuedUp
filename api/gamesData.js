@@ -11,7 +11,16 @@ const createQueuedGame = (payload) => new Promise((resolve, reject) => {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => resolve(data))
+    .then((data) => {
+      const setcode = { firebaseKey: data.name };
+      fetch(`${endpoint}/queuedGames/${setcode.firebaseKey}.json`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(setcode),
+      }).then(resolve);
+    })
     .catch(reject);
 });
 
@@ -166,6 +175,18 @@ const getReviewsByGameId = (gameId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteSingleQueue = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/queuedGames/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getAllGames,
   deleteSingleGame,
@@ -178,4 +199,5 @@ export {
   createReview,
   updateReview,
   getReviewsByGameId,
+  deleteSingleQueue,
 };

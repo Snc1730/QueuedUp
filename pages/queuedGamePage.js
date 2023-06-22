@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useAuth } from '../utils/context/authContext';
-import { getAllGames } from '../api/gamesData';
 import QueuedGameCard from '../components/QueuedGameCard';
+import { getUsersQueuedGames } from '../api/gamesData';
 
 function QueuedGamesOnDom() {
   const { user } = useAuth();
@@ -10,7 +10,7 @@ function QueuedGamesOnDom() {
   const [userGames, setGames] = useState([]);
 
   const getAllTheGames = () => {
-    getAllGames(user.uid).then(setGames);
+    getUsersQueuedGames(user.uid).then(setGames);
   };
 
   useEffect(() => {

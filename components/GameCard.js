@@ -14,7 +14,14 @@ function GameCard({ gameObj }) {
   const handleQueueClick = (e) => {
     e.preventDefault();
     const payload = {
-      uid: user.uid, game_id: gameObj.firebaseKey,
+      uid: user.uid,
+      game_id: gameObj.firebaseKey,
+      description: gameObj.description,
+      genre: gameObj.genre,
+      image: gameObj.image,
+      numOfPlayers: gameObj.numOfPlayers,
+      price: gameObj.price,
+      title: gameObj.title,
     };
     createQueuedGame(payload).then(() => {
       router.push('/queuedGamePage');
@@ -29,7 +36,7 @@ function GameCard({ gameObj }) {
         <Card.Title>{gameObj.title}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE GAME DETAILS  */}
         <Link href={`/game/${gameObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
+          <Button variant="primary" className="m-2">Reviews</Button>
         </Link>
         <Button variant="danger" onClick={handleQueueClick} className="card-unsave">Add To Queue</Button>
       </Card.Body>
@@ -42,6 +49,7 @@ GameCard.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.string,
+    genre: PropTypes.string,
     description: PropTypes.string,
     numOfPlayers: PropTypes.string,
     firebaseKey: PropTypes.string,

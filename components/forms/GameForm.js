@@ -141,7 +141,7 @@ GameForm.propTypes = {
     price: PropTypes.string,
     numOfPlayers: PropTypes.string,
     title: PropTypes.string,
-    genre_id: PropTypes.string,
+    genre: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

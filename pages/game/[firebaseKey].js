@@ -19,18 +19,20 @@ export default function ViewGame() {
   const getGameReviews = () => { getReviewsByGameId(firebaseKey).then(); };
 
   return (
-    <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={gameDetails.image} alt={gameDetails.title} style={{ width: '300px' }} />
-      </div>
-      <div className="text-white ms-5 details">
-        <h5>
-          {gameDetails.title}
-        </h5>
-        <p>{gameDetails.description || ''}</p>
-        <hr />
-        <p>{gameDetails.price || ''}</p>
-        <p>{gameDetails.numOfPlayers || ''}</p>
+    <>
+      <div className="mt-5 d-flex flex-wrap">
+        <div className="d-flex flex-column">
+          <img src={gameDetails.image} alt={gameDetails.title} style={{ width: '300px' }} />
+        </div>
+        <div className="text-black ms-5 details">
+          <h5>
+            {gameDetails.title}
+          </h5>
+          <p>Description: {gameDetails.description || ''}</p>
+          <hr />
+          <p>Price: ${gameDetails.price || ''}</p>
+          <p>Number of players: {gameDetails.numOfPlayers || ''}</p>
+        </div>
       </div>
       <span>Reviews</span>
       <div className="review-container">
@@ -38,6 +40,6 @@ export default function ViewGame() {
           <ReviewForm gameId={firebaseKey} onUpdate={getGameReviews} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
