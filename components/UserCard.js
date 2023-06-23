@@ -21,7 +21,7 @@ export default function UserData() {
 
   return (
     <>
-      <Card style={{ width: '18rem', margin: '10px' }}>
+      <Card style={{ width: '18rem', margin: '10px', textAlign: 'center' }}>
         <Card.Img variant="top" src={user.photoURL} alt={user.displayName} style={{ height: '400px' }} />
         <Card.Body>
           <Card.Title>{user.displayName}</Card.Title>

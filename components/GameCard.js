@@ -25,7 +25,6 @@ function GameCard({ gameObj }) {
     };
     createQueuedGame(payload).then(() => {
       router.push('/queuedGamePage');
-      console.warn(gameObj);
     });
   };
 
@@ -38,7 +37,7 @@ function GameCard({ gameObj }) {
         <Link href={`/game/${gameObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">Reviews</Button>
         </Link>
-        <Button variant="danger" onClick={handleQueueClick} className="card-unsave">Add To Queue</Button>
+        <Button variant="danger" onClick={handleQueueClick}>Add To Queue</Button>
       </Card.Body>
     </Card>
   );
