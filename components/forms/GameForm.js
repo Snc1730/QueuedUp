@@ -99,6 +99,13 @@ function GameForm({ obj }) {
           <option value="">Select a Genre</option>
           <option value="Action">Action</option>
           <option value="Adventure">Adventure</option>
+          <option value="Casual">Casual</option>
+          <option value="RPG">RPG</option>
+          <option value="Simulation">Simulation</option>
+          <option value="Strategy">Strategy</option>
+          <option value="Sports & Racing">Sports & Racing</option>
+          <option value="Massively Multiplayer">Massively Multiplayer</option>
+          <option value="Indie">Indie</option>
         </Form.Select>
       </FloatingLabel>
 

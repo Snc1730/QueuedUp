@@ -28,6 +28,7 @@ export default function ViewGame() {
           <h5>
             {gameDetails.title}
           </h5>
+          <p>Genre: {gameDetails.genre || ''}</p>
           <p>Description: {gameDetails.description || ''}</p>
           <hr />
           <p>Price: ${gameDetails.price || ''}</p>

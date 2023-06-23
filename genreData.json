@@ -8,5 +8,40 @@
     "genre_type" : "Adventure",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
     "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-Ecasual" : {
+    "genre_type" : "Casual",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-EGRPG" : {
+    "genre_type" : "RPG",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-Esimulation" : {
+    "genre_type" : "Simulation",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-Xstrategy" : {
+    "genre_type" : "Strategy",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-Esports" : {
+    "genre_type" : "Sports & Racing",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-EGmJMMo" : {
+    "genre_type" : "Massively Multiplayer",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
+  },
+  "-MiBt86VzkC-EGmindie" : {
+    "genre_type" : "Indie",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "adventureDescription"
   }
 }
