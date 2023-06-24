@@ -135,7 +135,7 @@ const getStrategy = () => new Promise((resolve, reject) => {
 });
 
 const getSports = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/games.json?orderBy="genre"&equalTo="Sports & Racing"`, {
+  fetch(`${endpoint}/games.json?orderBy="genre"&equalTo="Sports %26 Racing"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

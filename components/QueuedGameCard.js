@@ -19,6 +19,7 @@ function QueuedGameCard({ gameObj, onUpdate }) {
         <p>Description: {gameObj.description}</p>
         <p>Genre: {gameObj.genre}</p>
         <p>Price: ${gameObj.price}</p>
+        <p>Number of players: {gameObj.numOfPlayers}</p>
         <Button variant="danger" onClick={deleteThisQueuedGame} className="m-2">
           Remove
         </Button>
