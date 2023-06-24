@@ -24,7 +24,7 @@ export default function ViewGame() {
         <div className="d-flex flex-column">
           <img src={gameDetails.image} alt={gameDetails.title} style={{ width: '300px' }} />
         </div>
-        <div className="text-black ms-5 details">
+        <div className="text-white ms-5 details">
           <h5>
             {gameDetails.title}
           </h5>
@@ -35,9 +35,9 @@ export default function ViewGame() {
           <p>Number of players: {gameDetails.numOfPlayers || ''}</p>
         </div>
       </div>
-      <span>Reviews</span>
+      <span className="text-white">Reviews</span>
       <div className="review-container">
-        <div>
+        <div className="text-white">
           <ReviewForm gameId={firebaseKey} onUpdate={getGameReviews} />
         </div>
       </div>

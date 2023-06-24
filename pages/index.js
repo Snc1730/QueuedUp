@@ -58,16 +58,16 @@ function Home() {
 
   return (
     <>
-      <Button onClick={getAllTheGames}>Show All</Button>
-      <Button onClick={showAction}>Action</Button>
-      <Button onClick={showAdventure}>Adventure</Button>
-      <Button onClick={showCasual}>Casual</Button>
-      <Button onClick={showRPG}>RPG</Button>
-      <Button onClick={showSim}>Simulation</Button>
-      <Button onClick={showStrategy}>Strategy</Button>
-      <Button onClick={showSports}>Sports & Racing</Button>
-      <Button onClick={showMMO}>Massively Multiplayer</Button>
-      <Button onClick={showIndie}>Indie</Button>
+      <Button className="filterBtn" onClick={getAllTheGames}>Show All</Button>
+      <Button className="filterBtn" onClick={showAction}>Action</Button>
+      <Button className="filterBtn" onClick={showAdventure}>Adventure</Button>
+      <Button className="filterBtn" onClick={showCasual}>Casual</Button>
+      <Button className="filterBtn" onClick={showRPG}>RPG</Button>
+      <Button className="filterBtn" onClick={showSim}>Simulation</Button>
+      <Button className="filterBtn" onClick={showStrategy}>Strategy</Button>
+      <Button className="filterBtn" onClick={showSports}>Sports & Racing</Button>
+      <Button className="filterBtn" onClick={showMMO}>Massively Multiplayer</Button>
+      <Button className="filterBtn" onClick={showIndie}>Indie</Button>
       <div className="text-center d-flex flex-wrap">
         {userGames.map((game) => (
           <GameCard key={game.firebaseKey} gameObj={game} onUpdate={getAllTheGames} />
