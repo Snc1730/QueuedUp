@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav,
+  Navbar, Container, Nav, Image,
 } from 'react-bootstrap';
 
 export default function NavBarAuth() {
@@ -11,7 +11,15 @@ export default function NavBarAuth() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>Queued Up</Navbar.Brand>
+          <Navbar.Brand>
+            <Image
+              src="./logo.png"
+              alt="logo"
+              style={{
+                width: 100, marginTop: -20, marginBottom: -10, marginLeft: 0,
+              }}
+            />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

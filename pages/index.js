@@ -12,6 +12,7 @@ function Home() {
   const { user } = useAuth();
 
   const [userGames, setGames] = useState([]);
+  const [filter, setFilter] = useState('');
 
   const getAllTheGames = () => {
     getAllGames(user.uid).then(setGames);
@@ -58,6 +59,11 @@ function Home() {
 
   return (
     <>
+      <div className="text-center">
+        <br />
+        <input placeholder="Search Game" onChange={(event) => setFilter(event.target.value)} />
+      </div>
+      <br />
       <Button className="filterBtn" onClick={getAllTheGames}>Show All</Button>
       <Button className="filterBtn" onClick={showAction}>Action</Button>
       <Button className="filterBtn" onClick={showAdventure}>Adventure</Button>
@@ -69,7 +75,14 @@ function Home() {
       <Button className="filterBtn" onClick={showMMO}>Massively Multiplayer</Button>
       <Button className="filterBtn" onClick={showIndie}>Indie</Button>
       <div className="text-center d-flex flex-wrap">
-        {userGames.map((game) => (
+        {userGames.filter((game) => {
+          if (filter === '') {
+            return game;
+          } if (game.title.toLowerCase().includes(filter.toLowerCase())) {
+            return game;
+          }
+          return '';
+        }).map((game) => (
           <GameCard key={game.firebaseKey} gameObj={game} onUpdate={getAllTheGames} />
         ))}
       </div>
